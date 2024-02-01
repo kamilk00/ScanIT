@@ -1,0 +1,26 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             x:Class="ScanIT.MainPage"
+             Title="ScanIT!"
+             xmlns:vm="clr-namespace:ScanIT.ViewModels">
+    <StackLayout>
+        <Label x:Name="scanResultLabel" FontAttributes="Bold" IsVisible="{Binding scanResultLabelVisibility}" Text="{Binding scanResultLabel}" />
+        <Label x:Name="codeTypeLabel" IsVisible="{Binding codeTypeLabelVisibility}" Text="{Binding codeTypeLabel}" />
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="-5">
+            <Button x:Name="copyButton" Text="Copy" Command="{Binding CopyCommand}" FontSize="Micro" WidthRequest="70" HeightRequest="40" HorizontalOptions="Center" IsVisible="{Binding copyButtonVisibility}" />
+            <Button x:Name="addToFavouritesButton" Text="Add to Favourites" Command="{Binding AddToFavouritesCommand}" FontSize="Micro" WidthRequest="150" HeightRequest="40" HorizontalOptions="Center" IsVisible="{Binding addToFavouritesButtonVisibility}" />
+            <Button x:Name="editDescriptionButton" Text="Edit Description" Command="{Binding EditDescriptionCommand}" FontSize="Micro" WidthRequest="140" HeightRequest="40" HorizontalOptions="Center" IsVisible="{Binding editDescriptionButtonVisibility}" />
+        </StackLayout>
+        <Label x:Name="descriptionLabel" IsVisible="{Binding descriptionLabelVisibility}" Text="{Binding descriptionLabel}" />
+        <zxing:ZXingScannerView IsScanning="True" OnScanResult="ZXingScannerView_OnScanResult" />
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="-5">
+            <Button x:Name="registerButton" Text="Register" Command="{Binding GoToRegistrationPageCommand}" FontSize="Micro"  Margin="1" IsVisible="{Binding registerButtonVisibility}" />
+            <Button x:Name="loginButton" Text="Login" Command="{Binding GoToLoginPageCommand}" FontSize="Micro"  Margin="1"  IsVisible="{Binding loginButtonVisibility}" />
+            <Button x:Name="favouritesButton" Text="Favourites" Command="{Binding GoToFavouritesPageCommand}" FontSize="Micro"  Margin="1" IsVisible="{Binding favouritesButtonVisibility}" />
+            <Button x:Name="historyButton" Text="History" Command="{Binding GoToHistoryPageCommand}" FontSize="Micro" Margin="1" IsVisible="{Binding historyButtonVisibility}" />
+            <Button x:Name="aboutButton" Text="About" Command="{Binding GoToAboutPageCommand}" FontSize="Micro" Margin="1" IsVisible="{Binding IsVisible}" />
+            <Button x:Name="logoutButton" Text="Logout" Command="{Binding LogoutCommand}" Margin="1" FontSize="Micro" IsVisible="{Binding logoutButtonVisibility}" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

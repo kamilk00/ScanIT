@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScanIT.AboutPage"
+             Title="About"
+             xmlns:vm="clr-namespace:ScanIT.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding author}" FontAttributes="Italic" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="{Binding dateOfCreation}" FontAttributes="Italic" HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
